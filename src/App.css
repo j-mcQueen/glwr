@@ -1,13 +1,33 @@
 @font-face {
   font-family: "Times New Roman";
-  src: url(./fonts/TNR/TimesNewRomanMTStd.otf), format("otf"),
-       url(./fonts/TNR/TimesNewRomanMTStd-Bold.otf), format("otf");
+  src: url(assets/fonts/TNR/TimesNewRomanMTStd.otf), format("otf"),
+       url(assets/fonts/TNR/TimesNewRomanMTStd-Bold.otf), format("otf");
 }
 
 @font-face {
   font-family: "Liquid Crystal";
-  src: url(./fonts/LC/LiquidCrystal-Normal.otf), format("otf"),
-       url(./fonts/LC/LiquidCrystal-Bold.otf) format("otf");
+  src: url(assets/fonts/LC/LiquidCrystal-Normal.otf), format("otf"),
+       url(assets/fonts/LC/LiquidCrystal-Bold.otf) format("otf");
+}
+
+@media only screen and (max-width: 767px) {
+  .rabbit {
+    background-image: url(./assets/media/GLWR-VERTICAL-CLOUD.gif);
+  }
+
+  .shimmer {
+    height: 50px;
+  }
+}
+
+@media only screen and (min-width: 1081px) {
+  .rabbit {
+    background-image: url(./assets/media/LENTICULAR-GLWR.gif)
+  }
+
+  .shimmer {
+    height: 100px;
+  }
 }
 
 :root {
@@ -15,6 +35,7 @@
   --sec: white;
   background-color: var(--pri);
   color: var(--sec);
+  min-width: 300px;
   font-size: 10px;
 }
 
@@ -23,22 +44,19 @@
   grid-template-areas: 
   "gif"
   "link";
-  grid-template-rows: 0.6fr 0.4fr;
+  grid-template-rows: 0.5fr 0.5fr;
   height: 100vh;
 }
 
 .rabbit {
-  background-image: url(./media/GLWR-VERTICAL-CLOUD.gif);
   background-size: cover;
   background-position: center;
   grid-area: gif;
-  width: 100%;
 }
 
 nav {
   grid-area: link;
   font-family: "Liquid Crystal";
-  font-size: 4rem;
 }
 
 nav a {
@@ -52,4 +70,18 @@ nav a {
 
 .subnav {
   display: none;
+}
+
+.subnav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-size: 2.4rem;
+  font-weight: 300; 
+}
+
+.shimmer {
+  object-fit: cover;
+  width: 100%;
 }
