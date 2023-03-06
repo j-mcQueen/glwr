@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Times New Roman";
+  src: url(./fonts/TNR/TimesNewRomanMTStd.otf), format("otf"),
+       url(./fonts/TNR/TimesNewRomanMTStd-Bold.otf), format("otf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Liquid Crystal";
+  src: url(./fonts/LC/LiquidCrystal-Normal.otf), format("otf"),
+       url(./fonts/LC/LiquidCrystal-Bold.otf) format("otf");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --pri: black;
+  --sec: white;
+  background-color: var(--pri);
+  color: var(--sec);
+  font-size: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.glwr-home {
+  display: grid;
+  grid-template-areas: 
+  "gif"
+  "link";
+  grid-template-rows: 0.6fr 0.4fr;
+  height: 100vh;
+}
+
+.rabbit {
+  background-image: url(./media/GLWR-VERTICAL-CLOUD.gif);
+  background-size: cover;
+  background-position: center;
+  grid-area: gif;
+  width: 100%;
+}
+
+nav {
+  grid-area: link;
+  font-family: "Liquid Crystal";
+  font-size: 4rem;
+}
+
+nav a {
+  color: var(--sec);
+}
+
+.external {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subnav {
+  display: none;
 }
